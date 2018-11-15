@@ -11,7 +11,7 @@ import Foundation
 
 public class ConsoleDestination: LoggingDestination {
 
-	public override func send(message: Message) {
+	public override func send(message: Troop.Message) {
 		guard let owner = owner
 		else {
 			return
@@ -20,7 +20,7 @@ public class ConsoleDestination: LoggingDestination {
 		print(format(message: message, configuration: owner.configuration))
 	}
 
-	private func format(message: Message, configuration: Configuration) -> String {
+	private func format(message: Troop.Message, configuration: Troop.Configuration) -> String {
 		var components = [String]()
 
 		if configuration.showTimestamp {
@@ -45,7 +45,7 @@ public class ConsoleDestination: LoggingDestination {
 		return components.joined(separator: " ")
 	}
 
-	private func prefix(for level: Level) -> String {
+	private func prefix(for level: Troop.Level) -> String {
 		let prefix: String
 
 		switch level {

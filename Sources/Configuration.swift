@@ -9,24 +9,28 @@
 
 import Foundation
 
-public struct Configuration {
-	public var prefix: String
-	public var level: Level
+extension Troop {
 
-	public var showTimestamp = true
-	public var showThread = false
-	public var showLocation = true
+	public struct Configuration {
+		public var prefix: String
+		public var level: Level
 
-	public var dateFormatter: DateFormatter
-	public var dateFormat: String
+		public var showTimestamp = true
+		public var showThread = false
+		public var showLocation = true
 
-	public init(prefix: String, level: Level, showTimestamp: Bool = true, showThread: Bool = false, showLocation: Bool = true, dateFormatter: DateFormatter? = nil, dateFormat: String? = nil) {
-		self.prefix = prefix
-		self.level = level
-		self.showTimestamp = showTimestamp
-		self.showThread = showThread
-		self.showLocation = showLocation
-		self.dateFormatter = dateFormatter ?? DateFormatter()
-		self.dateFormat = dateFormat ?? "YYYY-mm-dd HH:mm:ss.SSS"
+		public var dateFormatter: DateFormatter
+		public var dateFormat: String
+
+		public init(prefix: String, level: Level, showTimestamp: Bool = true, showThread: Bool = false, showLocation: Bool = true, dateFormatter: DateFormatter? = nil, dateFormat: String? = nil) {
+			self.prefix = prefix
+			self.level = level
+			self.showTimestamp = showTimestamp
+			self.showThread = showThread
+			self.showLocation = showLocation
+			self.dateFormatter = dateFormatter ?? DateFormatter()
+			self.dateFormat = dateFormat ?? "YYYY-mm-dd HH:mm:ss.SSS"
+		}
 	}
+
 }

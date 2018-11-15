@@ -17,7 +17,7 @@ public class LoggingDestination: Destination {
 
 	public init() { }
 
-	public func send(message: Message) {
+	public func send(message: Troop.Message) {
 		fatalError("Incomplete implementation of the \(String(describing: Destination.self)) protocol!")
 	}
 }
