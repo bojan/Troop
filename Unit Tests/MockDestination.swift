@@ -17,7 +17,7 @@ class MockDestination: LoggingDestination {
 		self.isAsynchronous = true
 	}
 
-	func description(for level: Level) -> String {
+	func description(for level: Troop.Level) -> String {
 		switch level {
 		case .debug:
 			return "Д"
@@ -32,7 +32,7 @@ class MockDestination: LoggingDestination {
 		}
 	}
 
-	func execute(message: Message) {
+	func execute(message: Troop.Message) {
 		print("Message: \(message.contents)")
 	}
 

@@ -9,27 +9,29 @@
 
 import Foundation
 
-public enum Level: Int {
+extension Troop {
 
-	case verbose = 0
-	case debug
-	case info
-	case warning
-	case error
+	public enum Level: Int, CaseIterable {
 
-	public static let allValues: [Level] = [.verbose, .debug, .info, .warning, .error]
+		case verbose = 0
+		case debug
+		case info
+		case warning
+		case error
+
+	}
 
 }
 
-extension Level: Comparable {
+extension Troop.Level: Comparable {
 
-	public static func <(lhs: Level, rhs: Level) -> Bool {
+	public static func <(lhs: Troop.Level, rhs: Troop.Level) -> Bool {
 		return lhs.rawValue < rhs.rawValue
 	}
 
 }
 
-extension Level: CustomStringConvertible {
+extension Troop.Level: CustomStringConvertible {
 
 	public var description: String {
 		switch self {
@@ -50,6 +52,6 @@ extension Level: CustomStringConvertible {
 
 protocol MappableLevel {
 
-	init?(level: Level)
+	init?(level: Troop.Level)
 
 }

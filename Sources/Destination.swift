@@ -16,14 +16,14 @@ protocol Destination {
 	var formattedDate: String { get }
 	var owner: Troop? { get set }
 
-	func process(message: Message)
-	func send(message: Message)
-	func description(for level: Level) -> String
+	func process(message: Troop.Message)
+	func send(message: Troop.Message)
+	func description(for level: Troop.Level) -> String
 }
 
 extension Destination {
 
-	func process(message: Message) {
+	func process(message: Troop.Message) {
 		guard owner != nil
 		else {
 			return
@@ -45,7 +45,7 @@ extension Destination {
 		}
 	}
 
-	func description(for level: Level) -> String {
+	func description(for level: Troop.Level) -> String {
 		return level.description
 	}
 
