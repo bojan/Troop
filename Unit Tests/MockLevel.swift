@@ -15,7 +15,7 @@ enum MockLevel: Int, MappableLevel {
 	case fault
 	case warning
 
-	init?(level: Level) {
+	init?(level: Troop.Level) {
 		switch level {
 		case .verbose, .debug, .info:
 			self = .default

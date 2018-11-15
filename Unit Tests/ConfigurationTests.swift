@@ -12,7 +12,7 @@ import XCTest
 class ConfigurationTests: XCTestCase {
     
 	func testValidConfiguration() {
-		let configuration = Configuration(prefix: "com.starwars", level: .verbose, showTimestamp: false, showThread: false, showLocation: false, dateFormatter: MockDateFormatter(), dateFormat: "dd.mm.YYYY")
+		let configuration = Troop.Configuration(prefix: "com.starwars", level: .verbose, showTimestamp: false, showThread: false, showLocation: false, dateFormatter: MockDateFormatter(), dateFormat: "dd.mm.YYYY")
 
 		XCTAssertEqual(configuration.prefix, "com.starwars")
 		XCTAssertEqual(configuration.level, .verbose)
@@ -22,7 +22,7 @@ class ConfigurationTests: XCTestCase {
 		XCTAssertTrue(configuration.dateFormatter is MockDateFormatter)
 		XCTAssertEqual(configuration.dateFormat, "dd.mm.YYYY")
 
-		let configuration2 = Configuration(prefix: "com.marvel", level: .debug)
+		let configuration2 = Troop.Configuration(prefix: "com.marvel", level: .debug)
 		XCTAssertEqual(configuration2.prefix, "com.marvel")
 		XCTAssertEqual(configuration2.level, .debug)
 		XCTAssertTrue(configuration2.showTimestamp)

@@ -28,14 +28,14 @@ public class UnifiedLogDestination: LoggingDestination {
 		log = OSLog(subsystem: subsystem ?? Constants.UnifiedLog.subsystem, category: category ?? "")
 	}
 
-	public override func send(message: Message) {
+	public override func send(message: Troop.Message) {
 		os_log("%@", log: log, type: OSLogType(level: message.level), message.contents)
 	}
 }
 
 extension OSLogType: MappableLevel {
 
-	public init(level: Level) {
+	public init(level: Troop.Level) {
 		switch level {
 		case .verbose:
 			self = .info

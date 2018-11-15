@@ -9,11 +9,15 @@
 
 import Foundation
 
-public struct Message {
-	public var contents: String
-	public var level: Level
-	public var thread: Thread?
-	public var file: String
-	public var function: String
-	public var line: Int
+extension Troop {
+
+	public struct Message {
+		public var contents: String
+		public var level: Troop.Level
+		public var thread: Thread?
+		public var file: String
+		public var function: String
+		public var line: Int
+	}
+
 }
