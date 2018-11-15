@@ -20,8 +20,8 @@ class LevelTests: XCTestCase {
 		check(.error, for: 4)
 	}
 
-	private func check(_ level: Level, for rawValue: Int) {
-		let checkedLevel = Level(rawValue: rawValue)
+	private func check(_ level: Troop.Level, for rawValue: Int) {
+		let checkedLevel = Troop.Level(rawValue: rawValue)
 
 		XCTAssertNotNil(checkedLevel)
 		if let checkedLevel = checkedLevel {
@@ -30,17 +30,17 @@ class LevelTests: XCTestCase {
 	}
 
 	func testAllLevelValues() {
-		let allValues = Level.allValues
+		let allCases = Troop.Level.allCases
 
-		XCTAssertEqual(allValues.count, 5)
+		XCTAssertEqual(allCases.count, 5)
 	}
 
 	func testLevelComparison() {
-		XCTAssertTrue(Level.debug > Level.verbose)
-		XCTAssertFalse(Level.info > Level.warning)
-		XCTAssertTrue(Level.info >= Level.debug)
-		XCTAssertTrue(Level.verbose <= Level.warning)
-		XCTAssertFalse(Level.warning <= Level.debug )
+		XCTAssertTrue(Troop.Level.debug > Troop.Level.verbose)
+		XCTAssertFalse(Troop.Level.info > Troop.Level.warning)
+		XCTAssertTrue(Troop.Level.info >= Troop.Level.debug)
+		XCTAssertTrue(Troop.Level.verbose <= Troop.Level.warning)
+		XCTAssertFalse(Troop.Level.warning <= Troop.Level.debug )
 	}
 
 	func testLevelMapping() {
@@ -51,7 +51,7 @@ class LevelTests: XCTestCase {
 		check(.fault, for: .error)
 	}
 
-	private func check(_ level: MockLevel, for mappedLevel: Level) {
+	private func check(_ level: MockLevel, for mappedLevel: Troop.Level) {
 		let checkedLevel = MockLevel(level: mappedLevel)
 
 		XCTAssertNotNil(checkedLevel)
