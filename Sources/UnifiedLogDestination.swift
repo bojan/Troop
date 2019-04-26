@@ -6,7 +6,6 @@
 //  Copyright © 2018 Bojan Dimovski. All rights reserved.
 //
 
-
 import Foundation
 import os.log
 

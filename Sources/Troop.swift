@@ -6,7 +6,6 @@
 //  Copyright © 2017 Bojan Dimovski. All rights reserved.
 //
 
-
 import Foundation
 
 public struct Troop {
