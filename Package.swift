@@ -14,21 +14,31 @@
 //   0. You just DO WHAT THE FUCK YOU WANT TO.
 //
 //
-//  Constants
+//  Package
 //  Troop
 //
 //  Created by Bojan Dimovski on 29.12.17.
 //
 
-import Foundation
+import PackageDescription
 
-struct Constants {
-
-	static let mainThreadFallback = "Main"
-	static let defaultConfiguration = Troop.Configuration(prefix: "com.bojandimovski.troop.", level: .debug, showTimestamp: true, showThread: false, showLocation: true, dateFormatter: DateFormatter(), dateFormat: "YYYY-mm-dd HH:mm:ss.SSS")
-
-	struct Queue {
-		static let prefix = "\(Constants.defaultConfiguration.prefix)queue-"
-	}
-
-}
+let package = Package(
+    name: "Troop",
+    platforms: [
+        .macOS(.v10_12),
+        .iOS(.v10),
+        .tvOS(.v10),
+        .watchOS(.v3)
+    ],
+    products: [
+        .library(
+            name: "Troop",
+            targets: ["Troop"])
+    ],
+    targets: [
+        .target(
+            name: "Troop",
+            path: "Sources")
+    ],
+    swiftLanguageVersions: [.v5]
+)
