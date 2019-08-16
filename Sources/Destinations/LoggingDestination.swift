@@ -14,7 +14,7 @@
 //   0. You just DO WHAT THE FUCK YOU WANT TO.
 //
 //
-//  Constants
+//  LoggingDestination
 //  Troop
 //
 //  Created by Bojan Dimovski on 29.12.17.
@@ -22,13 +22,16 @@
 
 import Foundation
 
-struct Constants {
+public class LoggingDestination: Destination {
 
-	static let mainThreadFallback = "Main"
-	static let defaultConfiguration = Troop.Configuration(prefix: "com.bojandimovski.troop.", level: .debug, showTimestamp: true, showThread: false, showLocation: true, dateFormatter: DateFormatter(), dateFormat: "YYYY-mm-dd HH:mm:ss.SSS")
+	public var owner: Troop?
+	public var isAsynchronous = false
+	public var queue = DispatchQueue(label: "\(Constants.Queue.prefix)\(NSUUID().uuidString)")
 
-	struct Queue {
-		static let prefix = "\(Constants.defaultConfiguration.prefix)queue-"
+	public init() {
 	}
 
+	public func send(message: Troop.Message) {
+		fatalError("Incomplete implementation of the \(String(describing: Destination.self)) protocol!")
+	}
 }

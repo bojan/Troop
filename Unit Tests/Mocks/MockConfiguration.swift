@@ -14,21 +14,15 @@
 //   0. You just DO WHAT THE FUCK YOU WANT TO.
 //
 //
-//  Constants
-//  Troop
+//  MockConfiguration.swift
+//  Tests
 //
-//  Created by Bojan Dimovski on 29.12.17.
+//  Created by Bojan Dimovski on 15.2.18.
 //
 
 import Foundation
+@testable import Troop
 
-struct Constants {
-
-	static let mainThreadFallback = "Main"
-	static let defaultConfiguration = Troop.Configuration(prefix: "com.bojandimovski.troop.", level: .debug, showTimestamp: true, showThread: false, showLocation: true, dateFormatter: DateFormatter(), dateFormat: "YYYY-mm-dd HH:mm:ss.SSS")
-
-	struct Queue {
-		static let prefix = "\(Constants.defaultConfiguration.prefix)queue-"
-	}
+class MockDateFormatter: DateFormatter {
 
 }

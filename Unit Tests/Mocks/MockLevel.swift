@@ -14,21 +14,28 @@
 //   0. You just DO WHAT THE FUCK YOU WANT TO.
 //
 //
-//  Constants
+//  MockLevel
 //  Troop
 //
-//  Created by Bojan Dimovski on 29.12.17.
+//  Created by Bojan Dimovski on 14.2.18.
 //
 
 import Foundation
+@testable import Troop
 
-struct Constants {
+enum MockLevel: Int, MappableLevel {
+	case `default` = 0
+	case fault
+	case warning
 
-	static let mainThreadFallback = "Main"
-	static let defaultConfiguration = Troop.Configuration(prefix: "com.bojandimovski.troop.", level: .debug, showTimestamp: true, showThread: false, showLocation: true, dateFormatter: DateFormatter(), dateFormat: "YYYY-mm-dd HH:mm:ss.SSS")
-
-	struct Queue {
-		static let prefix = "\(Constants.defaultConfiguration.prefix)queue-"
+	init?(level: Troop.Level) {
+		switch level {
+		case .verbose, .debug, .info:
+			self = .default
+		case .warning:
+			self = .warning
+		case .error:
+			self = .fault
+		}
 	}
-
 }
