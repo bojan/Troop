@@ -1,17 +1,30 @@
 //
+//             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+//                     Version 2, December 2004
+//
+//  Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+//
+//  Everyone is permitted to copy and distribute verbatim or modified
+//  copies of this license document, and changing it is allowed as long
+//  as the name is changed.
+//
+//             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+//    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+//
+//   0. You just DO WHAT THE FUCK YOU WANT TO.
+//
+//
 //  ConsoleDestination
 //  Troop
 //
 //  Created by Bojan Dimovski on 13.12.17.
-//  Copyright © 2017 Bojan Dimovski. All rights reserved.
 //
-
 
 import Foundation
 
 public class ConsoleDestination: LoggingDestination {
 
-	public override func send(message: Message) {
+	public override func send(message: Troop.Message) {
 		guard let owner = owner
 		else {
 			return
@@ -20,7 +33,7 @@ public class ConsoleDestination: LoggingDestination {
 		print(format(message: message, configuration: owner.configuration))
 	}
 
-	private func format(message: Message, configuration: Configuration) -> String {
+	private func format(message: Troop.Message, configuration: Troop.Configuration) -> String {
 		var components = [String]()
 
 		if configuration.showTimestamp {
@@ -45,7 +58,7 @@ public class ConsoleDestination: LoggingDestination {
 		return components.joined(separator: " ")
 	}
 
-	private func prefix(for level: Level) -> String {
+	private func prefix(for level: Troop.Level) -> String {
 		let prefix: String
 
 		switch level {

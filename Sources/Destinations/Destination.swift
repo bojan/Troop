@@ -1,11 +1,24 @@
 //
+//             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+//                     Version 2, December 2004
+//
+//  Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+//
+//  Everyone is permitted to copy and distribute verbatim or modified
+//  copies of this license document, and changing it is allowed as long
+//  as the name is changed.
+//
+//             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+//    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+//
+//   0. You just DO WHAT THE FUCK YOU WANT TO.
+//
+//
 //  Destination
 //  Troop
 //
 //  Created by Bojan Dimovski on 12.12.17.
-//  Copyright © 2017 Bojan Dimovski. All rights reserved.
 //
-
 
 import Foundation
 import Dispatch
@@ -16,14 +29,14 @@ protocol Destination {
 	var formattedDate: String { get }
 	var owner: Troop? { get set }
 
-	func process(message: Message)
-	func send(message: Message)
-	func description(for level: Level) -> String
+	func process(message: Troop.Message)
+	func send(message: Troop.Message)
+	func description(for level: Troop.Level) -> String
 }
 
 extension Destination {
 
-	func process(message: Message) {
+	func process(message: Troop.Message) {
 		guard owner != nil
 		else {
 			return
@@ -45,7 +58,7 @@ extension Destination {
 		}
 	}
 
-	func description(for level: Level) -> String {
+	func description(for level: Troop.Level) -> String {
 		return level.description
 	}
 

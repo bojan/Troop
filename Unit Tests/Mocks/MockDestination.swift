@@ -14,21 +14,39 @@
 //   0. You just DO WHAT THE FUCK YOU WANT TO.
 //
 //
-//  Constants
-//  Troop
+//  MockDestination.swift
+//  Tests
 //
-//  Created by Bojan Dimovski on 29.12.17.
+//  Created by Bojan Dimovski on 14.12.17.
 //
 
 import Foundation
+@testable import Troop
 
-struct Constants {
+class MockDestination: LoggingDestination {
+	override init() {
+		super.init()
 
-	static let mainThreadFallback = "Main"
-	static let defaultConfiguration = Troop.Configuration(prefix: "com.bojandimovski.troop.", level: .debug, showTimestamp: true, showThread: false, showLocation: true, dateFormatter: DateFormatter(), dateFormat: "YYYY-mm-dd HH:mm:ss.SSS")
+		self.isAsynchronous = true
+	}
 
-	struct Queue {
-		static let prefix = "\(Constants.defaultConfiguration.prefix)queue-"
+	func description(for level: Troop.Level) -> String {
+		switch level {
+		case .debug:
+			return "Д"
+		case .error:
+			return "Е"
+		case .info:
+			return "И"
+		case .verbose:
+			return "В"
+		case .warning:
+			return "Њ"
+		}
+	}
+
+	func execute(message: Troop.Message) {
+		print("Message: \(message.contents)")
 	}
 
 }
