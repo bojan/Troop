@@ -1,5 +1,5 @@
 # Troop
-A modern device detection and querying library.
+A lightweight logging utility for iOS, macOS, watchOS and tvOS.
 
 [![Build Status](https://app.bitrise.io/app/11d74c16cb253334/status.svg?token=0hHCAt_h3zx3j8DHmI-AWQ&branch=master)](https://app.bitrise.io/app/11d74c16cb253334)
 [![GitHub license](https://img.shields.io/badge/license-WTFPL-brightgreen?style=flat-square)](https://raw.githubusercontent.com/bojan/Troop/master/LICENSE)
@@ -12,6 +12,7 @@ A modern device detection and querying library.
 - [x] Swift 5 support
 - [x] Modern syntax
 - [x] OSLog support
+- [x] Custom logging destinations
 
 ## Requirements
 
