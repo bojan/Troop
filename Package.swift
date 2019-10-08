@@ -32,14 +32,12 @@ let package = Package(
         .watchOS(.v3)
     ],
     products: [
-        .library(
-            name: "Troop",
-            targets: ["Troop"])
+        .library(name: "Troop", targets: ["Troop"])
     ],
+    dependencies: [],
     targets: [
         .target(
             name: "Troop",
             path: "Sources")
-    ],
-    swiftLanguageVersions: [.v5]
+    ]
 )

@@ -69,6 +69,10 @@ profile
 *.ipa
 
 ####
+# Swift Package Manager
+.swiftpm
+
+####
 # CocoaPods
 Pods/
 !Podfile
