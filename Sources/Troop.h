@@ -7,8 +7,8 @@
 
 @import Foundation;
 
-//! Project version number for Logger.
-FOUNDATION_EXPORT double LoggerVersionNumber;
+//! Project version number for Troop.
+FOUNDATION_EXPORT double TroopVersionNumber;
 
-//! Project version string for Logger.
-FOUNDATION_EXPORT const unsigned char LoggerVersionString[];
+//! Project version string for Troop.
+FOUNDATION_EXPORT const unsigned char TroopVersionString[];
