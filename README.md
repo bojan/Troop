@@ -6,6 +6,7 @@ A lightweight logging utility for iOS, macOS, watchOS and tvOS.
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
 [![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen.svg?style=flat-square)](https://github.com/apple/swift-package-manager)
 [![codecov](https://codecov.io/gh/bojan/Troop/branch/master/graph/badge.svg)](https://codecov.io/gh/bojan/Troop)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbojan%2FTroop.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbojan%2FTroop?ref=badge_shield)
 
 ## Features
 
@@ -161,3 +162,6 @@ Bojan Dimovski
 ## License
 
 Troop is available under the WTFPL license. Check the [LICENSE](https://raw.githubusercontent.com/bojan/Troop/master/LICENSE) file for more info.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbojan%2FTroop.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbojan%2FTroop?ref=badge_large)
